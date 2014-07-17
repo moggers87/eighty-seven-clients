@@ -14,11 +14,15 @@ config = {
     "long_description": "Simple client for the EightySeven service",
     "name": "eightyseven_cli",
     "py_modules": ["eightyseven_cli"],
-    "license": "GPLv3+"
+    "license": "GPLv3+",
     "version": "0",
-    "entry_points":  {
-        'console_scripts': ['eightyseven=eighyseven_cli:main'],
-    }
+    "entry_points": {
+        'console_scripts': ['eightyseven=eightyseven_cli:main'],
+    },
+    "install_requires": [
+        "requests-oauthlib>=0.4.0",
+        "requests>=2.3.0",
+    ],
 }
 
 setup(**config)
