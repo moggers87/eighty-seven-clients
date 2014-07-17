@@ -19,6 +19,8 @@ from __future__ import unicode_literals, print_function
 
 import json
 
+__all__ = ["PasswordStore", "PasswordRecord"]
+
 class Model(object):
     """Base model for API objects
 
@@ -83,6 +85,19 @@ class Model(object):
             obj._fields[field] = data[field]
 
         return obj
+
+    def delete(self):
+        if self.id is None:
+            raise Exception("This object has not been populated with data")
+        response = self.session.delete(self._url())
+
+        if response.status_code > 499:
+            raise Exception("Server error: %s" % response.status_code)
+        elif response.status_code > 399:
+            raise Exception("URL not found")
+
+        self.id = None
+        self._fields = {}
 
     def save(self, update_fields=None):
         """Save object to the server"""
