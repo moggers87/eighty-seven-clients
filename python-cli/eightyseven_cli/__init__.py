@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+#
+# Copyright (C) 2014 Matt Molyneaux
+#
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -13,6 +16,10 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 from __future__ import unicode_literals, print_function
+
+from eightyseven_cli.config import JSONStore
+
+import requests
 
 def main():
     print("Hello")
