@@ -8,10 +8,8 @@ config = {
     "author_email": "moggers87+git@moggers87.co.uk",
     "classifiers": [
         "Development Status :: 3 - Alpha",
-        "License :: OSI Approved :: MIT License",
     ],
     "description": "A simple client for the EightySeven",
-    "license": "MIT",
     "long_description": "Simple client for the EightySeven service",
     "name": "eightyseven_cli",
     "py_modules": ["eightyseven_cli"],
