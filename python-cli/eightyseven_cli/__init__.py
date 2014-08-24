@@ -31,45 +31,5 @@ class Session(requests.Session):
         request.url = self._prepend_url + request.url
         return super(Session, self).prepare_request(request)
 
-    def request(self, method, url, **kwargs):
-        url = self._prepend_url + url
-        return super(Session, self).request(self, method, url, **kwargs)
-
-    def get(self, url, **kwargs):
-        url = self._prepend_url + url
-        return super(Session, self).get(self, url, **kwargs)
-
-    def options(self, url, **kwargs):
-        url = self._prepend_url + url
-        return super(Session, self).options(self, url, **kwargs)
-
-    def head(self, url, **kwargs):
-        url = self._prepend_url + url
-        return super(Session, self).head(self, url, **kwargs)
-
-    def post(self, url, **kwargs):
-        url = self._prepend_url + url
-        return super(Session, self).post(self, url, **kwargs)
-
-    def put(self, url, **kwargs):
-        url = self._prepend_url + url
-        return super(Session, self).put(self, url, **kwargs)
-
-    def patch(self, url, **kwargs):
-        url = self._prepend_url + url
-        return super(Session, self).patch(self, url, **kwargs)
-
-    def delete(self, url, **kwargs):
-        url = self._prepend_url + url
-        return super(Session, self).delete(self, url, **kwargs)
-
-    def send(self, request, **kwargs):
-        request.url = self._prepend_url + request.url
-        return super(Session, self).send(request, **kwargs)
-
-    def get_adapter(self, url):
-        url = self._prepended_url + url
-        return super(Session, self).get_adapter(url)
-
 def main():
     print("Hello")
