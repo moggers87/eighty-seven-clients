@@ -77,7 +77,7 @@ class Model(object):
             data = json.loads(data)
         obj.id = data["id"]
 
-        # we've either dealth with these fields or don't care about them
+        # we've either dealt with these fields or don't care about them
         del data["id"]
         del data["resource_uri"]
 
@@ -85,6 +85,12 @@ class Model(object):
             obj._fields[field] = data[field]
 
         return obj
+
+    @classmethod
+    def get(cls, session, id):
+        url = "/{0}/{1}/".format(cls.__name__.lower(), id)
+        data = session.get(url)
+        return cls.create(session, data)
 
     def delete(self):
         if self.id is None:
